@@ -1,0 +1,27 @@
+{
+  "name": "liberty-flat",
+  "version": "0.0.0",
+  "description": "Liberty Flat theme for Livre's HTML5 engine.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lcneves/liberty-flat.git"
+  },
+  "keywords": [
+    "Liberty",
+    "HTML5",
+    "theme"
+  ],
+  "author": "Lucas Neves <lcneves@gmail.com> (https://www.lcneves.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lcneves/liberty-flat/issues"
+  },
+  "homepage": "https://github.com/lcneves/liberty-flat#readme",
+  "dependencies": {
+    "livre-html": "0.0.2"
+  }
+}
