@@ -4,10 +4,13 @@
   "description": "Liberty Flat theme for Livre's HTML5 engine.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
+    "lint": "eslint *.js",
+    "prebuild:js": "npm run lint",
+    "build:js": "browserify . -o resources/scripts/theme.js",
     "build:pug": "pug-module views/*.pug -o lib/templates.js",
     "build:stylus": "stylus stylus/index.styl --out resources/stylesheets/theme.css",
-    "build": "npm run build:pug && npm run build:stylus"
+    "build": "run-p build:*"
   },
   "repository": {
     "type": "git",
@@ -25,9 +28,28 @@
   },
   "homepage": "https://github.com/lcneves/liberty-flat#readme",
   "dependencies": {
-    "livre-html": "0.0.2"
+    "livre-html": "latest"
   },
   "devDependencies": {
-    "pug-module": "^1.1.3"
+    "babel-preset-env": "latest",
+    "babelify": "latest",
+    "browserify": "latest",
+    "pug-module": "latest",
+    "eslint": "latest",
+    "mocha": "latest",
+    "npm-run-all": "latest",
+    "babel-polyfill": "latest"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "env"
+          ]
+        }
+      ]
+    ]
   }
 }
