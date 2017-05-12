@@ -6,11 +6,11 @@
   "scripts": {
     "test": "mocha",
     "lint": "eslint *.js",
-    "prebuild:js": "npm run lint",
-    "build:js": "browserify . -o resources/scripts/theme.js",
+    "prebuild:js": "run-s lint build:pug",
+    "build:js": "browserify . -o public/scripts/theme.js",
     "build:pug": "pug-module views/*.pug -o lib/templates.js",
-    "build:stylus": "stylus stylus/index.styl --out resources/stylesheets/theme.css",
-    "build": "run-p build:*"
+    "build:stylus": "stylus stylus/index.styl --out public/stylesheets/theme.css",
+    "build": "run-p build:js build:stylus"
   },
   "repository": {
     "type": "git",

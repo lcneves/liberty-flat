@@ -7172,6 +7172,7 @@ function pug_rethrow(err, filename, lineno, str){
  * Copyright 2017 Lucas Neves <lcneves@gmail.com>
  *
  * Liberty-flat theme for the Livre-HTML engine.
+ * Uses pug templates to dynamically generate HTML strings for the engine.
  * Part of the Livre project.
  */
 
